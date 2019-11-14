@@ -1,0 +1,29 @@
+syntax = "proto3";
+service NoteService {
+    rpc List (Empty) returns (NoteList) {}
+    rpc Insert (User) returns (UserList) {}
+    rpc Token(UserToken) returns  (gettoken){}
+}
+message Empty {}
+message Note {
+   string id = 1;
+   string title = 2;
+   string content = 3;
+}
+message NoteList {
+   repeated Note notes = 1;
+}
+message User {
+   string id = 1;
+   string name = 2;
+}
+message UserList {
+   repeated User userlists = 1;
+}
+message UserToken {
+    string id = 1;
+   string name =2;
+}
+message gettoken{
+   string token =1;
+}
